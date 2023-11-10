@@ -1,0 +1,16 @@
+<h1>Hello World</h1>
+
+<%= button_to 'Add new book', books_new_path, method: :get %>
+
+<% if Book.all.each do |book| %>
+    <p>Title :<%= book.title %></p>
+    <p>Author :<%= book.author %></p>
+    <p>Book Description : <%= book.description %></p>
+    <p>Reading Status: <%= book.reading_status %></p>
+    -----------------------------
+    <%= button_to 'Modify book', modify_book_path(book), method: :get %>
+    <%= button_to 'Delete book', delete_book_path(book), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+
+<% end.empty? %>
+    <p>No books found</p>
+<% end %> 

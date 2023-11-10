@@ -1,0 +1,12 @@
+<h1>New Book Page</h1>
+
+<%= link_to 'Back to Books', books_path %>
+<%= form_with url: books_path do |form| %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+    <%= form.submit %>
+<% end %>
